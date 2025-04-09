@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Beat the "beast"!</title>
+    <title>Maldonado Engine</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -11,7 +11,7 @@
     />
     <meta name="keywords" content="chess, bot, PyTorch, Nikolay" />
     <meta name="author" content="Alexander Serkov, Skripko Nikolay" />
-
+    
     <script src="https://unpkg.com/lodash@4.17.20"></script>
 
     <link rel="stylesheet" href="./assets/chessboard.css" />
@@ -20,28 +20,33 @@
       rel="stylesheet"
       href="./assets/extensions/promotion-dialog/promotion-dialog.css"
     />
-
+    
     <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
 
     <link rel="stylesheet" href="board.css" />
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <span>Bot <span class="gm-label">GM</span> (4000)</span>
     <span id="modelLoading" class="modelLoading hidden">
-      Loading model...
+      Cargando...
     </span>
+    <span>Maldonado Engine (150)</span>
     <div id="board" class="board"></div>
-    <button id="flipBoardButton">Flip board</button>
-    <button id="autoPlayButton">Auto play</button>
+    <p>Para jugar con las piezas negras, presione el botón de Intercambiar Equipo</p>
+    <button id="flipBoardButton">Intercambiar Equipo</button>
+    <button id="autoPlayButton">Juego Automatico</button>
+    <div>
+      <p>Maldonado Engine es un Motor de Ajedrez basada en DeepLearning</p>
+      <p>Hecho por Luis Fernando Ramírez, Universidad Bicentenaria de Aragua</p>
+    </div>
     <overlay id="overlay" class="overlay hidden">
       <div class="overlay-content">
-        <span id="gameOverText">Game over</span>
+        <span id="gameOverText">Fin de la Partida</span>
         <span class="gameCode">
-          Your game <button id="gameCode">PGN</button>
+          Código de Partida: <button id="gameCode">Copiar</button>
         </span>
-        <button id="restartButton">Restart</button>
-        <a href="https://chess.wintrcat.uk/" target="_blank">Analyse</a>
+        <button id="restartButton">Reiniciar</button>
+        <a href="https://chess.wintrcat.uk/" target="_blank">Analizar</a>
       </div>
     </overlay>
 
